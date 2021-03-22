@@ -1,0 +1,78 @@
+.articles {
+    background-color: $veryLightGray;
+    padding: 88px 0 64px 0;
+
+    h2 {
+        margin-bottom: 34px;
+        text-align: center;
+        
+        @media only screen and (min-width: $breakpoint-up-1){
+            text-align: left;
+        }
+        @media only screen and (min-width: $breakpoint-up-2){
+            margin-bottom: 50px;
+        }
+    }
+
+    @media only screen and (min-width: $breakpoint-up-2){
+        padding-bottom: 80px;
+    } 
+
+    &__grid{
+        @media only screen and (min-width: $breakpoint-up-1){
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }  
+    }
+}
+
+.article {
+    display: block;
+    background-color: $white;
+    text-align: left;
+    margin-bottom: 24px;
+    border-radius: 5px;
+    overflow: hidden;
+
+    @media only screen and (min-width: $breakpoint-up-1){
+        width: 49%;
+    }
+    @media only screen and (min-width: $breakpoint-up-2){
+        width: 23.5%;
+        margin-bottom: 0;
+    }
+
+    &__image {
+       height: 200px;
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-position: center;
+    }
+
+    &__text {
+        padding: 28px 28px 40px 28px;
+        @media only screen and (min-width: $breakpoint-up-1){
+            padding: 28px 22px 24px 22px;
+        }
+    }
+
+    &__author {
+        font-size: 0.625rem; //10px
+        margin-bottom: 11px;
+    }
+
+    &__title {
+        margin-bottom: 11px;
+        transition: color 150ms ease-in-out;
+
+        &:hover {
+            color: $limeGreen;
+        }
+    }
+
+    &__excerpt {
+        font-size: 0.8125rem; //13px
+        line-height: 1.38; //18px
+    }
+}

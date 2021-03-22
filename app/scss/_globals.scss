@@ -1,0 +1,119 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box; /* final width of an element will include padding */
+}
+
+*, 
+*::before, 
+*::after {
+    box-sizing: inherit;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 1.125rem; // 18px
+    font-weight: 300;
+    color: $grayishBlue;
+    overflow-x: hidden;
+
+    &.noscroll {
+        overflow: hidden; // will prevent scrolling when mobile menu is open
+    }
+}
+
+// Typography
+h1, h2, h3, h4 {
+    font-weight: 400;
+    color: $darkBlue;
+}
+
+h1 {
+    font-size: 2.375rem; // 38px
+    @media only screen and (min-width: $breakpoint-up-2){
+        font-size: 3.375rem; // 54px
+    }
+}
+
+h2 {
+    font-size: 1.9375rem; //31px
+    @media only screen and (min-width: $breakpoint-up-2){
+        font-size: 2.5rem; //40px
+    }
+}
+
+h3 {
+    font-size: 1.25rem; //20px
+    @media only screen and (min-width: $breakpoint-up-2){
+        font-size: 1.5rem; //24px
+    }
+}
+
+h4 {
+    font-size: 1rem; //16px
+    line-height: 1.25; //20px
+}
+
+p {
+    font-size: 0.90625rem; //14.5px
+    line-height: 1.72; //25px
+    margin-bottom: 0;
+    @media only screen and (min-width: $breakpoint-up-2){
+        font-size: 1.125rem; //18px
+        line-height: 1.56; //28px
+    }
+}
+
+// Links
+a {
+    text-decoration: none;
+    color: $grayishBlue;
+}
+
+// Buttons
+button {
+    position: relative;
+    padding: 0.875rem 2.125rem;
+    background-image: linear-gradient(to right, $limeGreen, $brightCyan);
+    border: none;
+    border-radius: 50px;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 0.875rem; // 14px
+    font-weight: 700;
+    color: $white;
+    overflow: hidden;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute; // to place it on top of the button
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.25); // slightly transparent white
+        opacity: 0; // hidden by default
+        transition: opacity 200ms ease-in-out;
+    }
+
+    &:hover::before {
+        opacity: 1;
+    }
+}
+
+// Page Margins
+.container {
+    margin-left: $margin-mobile;
+    margin-right: $margin-mobile;
+    @media only screen and (min-width: $breakpoint-up-1){
+        margin-left: $margin-tablet;
+        margin-right: $margin-tablet;
+    }
+    @media only screen and (min-width: $breakpoint-up-2){
+        margin-left: $margin-desktop;
+        margin-right: $margin-desktop;
+    }
+}

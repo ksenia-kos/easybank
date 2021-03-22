@@ -1,0 +1,108 @@
+.footer {
+    background-color: $darkBlue;
+    padding: 36px 0 40px 0;
+    text-align: center;
+
+    @media only screen and (min-width: $breakpoint-up-2) {
+        padding: 46px 0;
+        text-align: left;
+    }
+
+    .container {
+
+        @media only screen and (min-width: $breakpoint-up-2) {
+            display: grid;
+            grid-template: 1fr / 2fr 1fr 2fr 3fr;
+            grid-column-gap: 25px;
+        } 
+    }
+
+    &__social {
+        margin-bottom: 30px;
+        @media only screen and (min-width: $breakpoint-up-2) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 0;
+        }
+    }
+
+    &__logo {
+        display: inline-block;
+        margin-bottom: 30px;
+        @media only screen and (min-width: $breakpoint-up-2) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__social__icons {
+
+        a {
+            display: inline-block;
+            height: 1.25rem;
+
+            svg path {
+                transition: fill 200ms ease-in-out;
+            }
+
+            &:hover svg path {
+                fill: $limeGreen;
+            }
+        }
+    
+        a:not(:last-child) {
+            margin-right: 14px;
+            @media only screen and (min-width: $breakpoint-up-2) {
+                margin-right: 8px;
+            }
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            color: $white;
+            font-size: 0.90625rem; //14.5px
+            line-height: 2.3;
+            transition: color 200ms ease-in-out;
+
+            &:hover {
+                color: $limeGreen;
+            }
+        }
+
+        &.col2 {
+            margin-bottom: 30px;
+
+            @media only screen and (min-width: $breakpoint-up-2) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__cta {
+
+        @media only screen and (min-width: $breakpoint-up-2) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        &__button {
+            margin-bottom: 30px;
+            @media only screen and (min-width: $breakpoint-up-2) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__copyright {
+        font-size: 0.90625rem; //14.5px
+        @media only screen and (min-width: $breakpoint-up-2) {
+            text-align: right;
+        }
+    }
+}
